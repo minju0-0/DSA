@@ -27,16 +27,26 @@ int main(){
                 break;
             case 't':
                 cin >> pos;
-                cout << "Removed " << list->removeAt(pos) << endl;
+                {
+                    int removed = list->removeAt(pos);
+                    if (removed == -1) {
+                        cout << "Invalid Position" << endl;
+                    } else {
+                        cout << "Removed " << removed << endl;
+                    }
+                }
                 break;
-            // case 'g':
-            //     cin >> n;
-            //     if(list->getPosition(n) == -1){
-            //         cout << "Element not found" << endl;
-            //     }else{
-            //         cout << "Element is in position " << list->getPosition(n) << endl;
-            //     }
-            //     break;
+            case 'g':
+                cin >> n;
+                {
+                    int nPos = list->getPosition(n);
+                    if(nPos == -1){
+                        cout << "Element not found" << endl;
+                    }else{
+                        cout << "Element is in position " << nPos << endl;
+                    }
+                }
+                break;
             case 'r':
                 cin >> n;
                 cout << "Removed position " << list->remove(n) << endl;
@@ -44,16 +54,15 @@ int main(){
             case 'A':
                 cin >> n;
                 cin >> pos;
-                list->addAt(n, pos);
-                cout << "Succesfully added!" << endl;        
+                list->addAt(n, pos); 
                 break;
             case 'x':
                 cout << "Exiting..." << endl;
                 break;
-            // case 'R' :
-            //     cin >> n;
-            //     cout << "Removed " << list->removeAll(n) << " of \"" << n <<"\"" << endl;
-            //     break;
+            case 'R' :
+                cin >> n;
+                cout << "Removed " << list->removeAll(n) << " element/s of \"" << n <<"\"" << endl;
+                break;
             default:
                 cout << "Invalid operation" << endl;
             
