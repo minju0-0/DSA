@@ -1,0 +1,1 @@
+cout << cll->removeNode(3) << endl;
