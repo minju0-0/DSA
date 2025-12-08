@@ -102,4 +102,6 @@ void print_node(string prefix, node* n, bool isLeft) {
         cout << "Size: " << size << endl;
         printGrid();
     }
+
+    
 };

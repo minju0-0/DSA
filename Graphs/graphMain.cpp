@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-    Graph* myGraph = new MyGraph();
+    Graph* myGraph = new AdjacencyMatrix();
     char op, v, u;
     int e;
 
@@ -29,6 +29,10 @@ int main(){
             case 'r':
                 cin >> v;
                 myGraph->removeVertex(v);
+                break;
+            case 's':
+                cin >> v >> u;
+                myGraph->shortestPath(v, u);
                 break;
             case 'x':
                 cout << "Exiting...." << endl;
